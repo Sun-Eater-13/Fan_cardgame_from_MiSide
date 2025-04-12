@@ -68,12 +68,12 @@ while len(deck_player)!=0:
     print(f"Mita\'s value taken into account in this round is: {Mita_card[fighting_value]} \n")
     if Mita_card[fighting_value] > deck_player[player_chosen_card - 1][fighting_value]:
         Mita_points += 1
-        print(f"Mita won this round.\nYour points: {player_points}. Mita\'s points: {Mita_points}")
+        print(f"Mita won this round.\nYour points: {player_points}. Mita\'s points: {Mita_points}\n")
     elif Mita_card[fighting_value] < deck_player[player_chosen_card - 1][fighting_value]:
         player_points += 1
-        print(f"You won this round. \nYour points: {player_points}. Mita\'s points: {Mita_points}")
+        print(f"You won this round. \nYour points: {player_points}. Mita\'s points: {Mita_points}\n")
     else:
-        print(f"It\'s draw in this round. \nYour points: {player_points}. Mita\'s points: {Mita_points}")
+        print(f"It\'s draw in this round. \nYour points: {player_points}. Mita\'s points: {Mita_points}\n")
     deck_Mita.remove(Mita_card)
     deck_player.pop(player_chosen_card - 1)
     if len(deck_player)==0:
