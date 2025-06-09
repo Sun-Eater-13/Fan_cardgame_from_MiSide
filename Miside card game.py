@@ -8,12 +8,13 @@ deck_player=[(3,10,5), (6,2,8), (7,0,0), (10,0,2), (5,0,10), (6,2,8), (3,8,1), (
 deck_Mita=[(3,10,5), (6,2,8), (7,0,0), (10,0,2), (5,0,10), (6,2,8), (3,8,1), (7,0,0)]
 
 def convert_into_text():
-    if fighting_value==0:
-        return "left"
-    elif fighting_value==1:
-        return "middle"
-    else:
-        return "right"
+    match fighting_value:
+        case 0:
+            return "left"
+        case 1:
+            return "middle"
+        case _:
+            return "right"
 
 def starting_round():
     print(f"The value used in this round is the {convert_into_text()} value.")
@@ -38,12 +39,13 @@ def player_choosing_card():
             print("Choose again correctly.")
 
 def check_if_win():
-    if player_points>Mita_points:
-        return "You won the whole game."
-    elif player_points<Mita_points:
-        return "Mita won the whole game."
-    else:
-        return "The whole game ended in a draw."
+    match player_points:
+        case _ if player_points>Mita_points:
+            return "You won the whole game."
+        case _ if player_points<Mita_points:
+            return "Mita won the whole game."
+        case _:
+            return "The whole game ended in a draw."
 
 print(f"""
 This is a game inspired by mini game from game MiSide. The game have 8 rounds.
